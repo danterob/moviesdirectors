@@ -34,3 +34,7 @@ class Genre(models.Model):
 
     def __str__(self):
         return self.name
+
+class DirectorsMovie(models.Model):
+    director = models.ForeignKey('Directors', on_delete=models.CASCADE, blank=True, null=True)
+    movie = models.ForeignKey('Movies', on_delete=models.CASCADE, blank=True, null=True)

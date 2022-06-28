@@ -3,7 +3,10 @@ from . models import Movies, Genre, Directors
 
 
 def index(request):
-    num_movies = Movies.objects.all().count()
-    num_directors = Directors.objects.all().count()
+    directors = Directors.objects.all().order_by('fisrt_name')
 
-    return render(request, 'cinema/index.html', {})
+    return render(request, 'cinema/index.html',
+                  {
+                      'directors': directors,
+                  }
+                  )

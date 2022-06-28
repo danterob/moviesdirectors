@@ -10,5 +10,11 @@
     <h1><a href="/">Menu de directores de cine</a> </h1>
 </div>
 
+{% for director in directors %}
+    <div>
+        <p>Director: {{ director.fisrt_name }} {{ director.last_name }}</p>
+    </div>
+{% endfor %}
+
 </body>
 </html>
