@@ -7,7 +7,7 @@ class Directors(models.Model):
     fisrt_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
     born_date = models.DateField(blank=True, null=True)
-    movie = models.ManyToManyField('Movies', null=True, blank=True)
+    movie = models.ManyToManyField('Movies', verbose_name="Movies", blank=True)
 
     def __str__(self):
         return f'{self.last_name}, {self.fisrt_name}'
@@ -34,7 +34,3 @@ class Genre(models.Model):
 
     def __str__(self):
         return self.name
-
-class DirectorsMovie(models.Model):
-    director = models.ForeignKey('Directors', on_delete=models.CASCADE, blank=True, null=True)
-    movie = models.ForeignKey('Movies', on_delete=models.CASCADE, blank=True, null=True)

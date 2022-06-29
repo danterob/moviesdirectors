@@ -11,8 +11,15 @@
 </div>
 
 {% for director in directors %}
-    <div>
-        <p>Director: {{ director.fisrt_name }} {{ director.last_name }}</p>
+    <li>
+        <li><p>Director: {{ director.fisrt_name }} {{ director.last_name }}</p></li>
+        {% if director.movie.all %}
+            {% for movie in director.movie.all %}
+            <ul>{{movie.title}}</ul>
+            {% endfor %}
+        {% else %}
+            <p>No tiene peliculas</p>
+        {% endif %}
     </div>
 {% endfor %}
 
