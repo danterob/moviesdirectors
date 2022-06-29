@@ -7,7 +7,7 @@ class Directors(models.Model):
     fisrt_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
     born_date = models.DateField(blank=True, null=True)
-    movie = models.ManyToManyField('Movies', verbose_name="Movies", blank=True)
+    movie = models.ManyToManyField('Movies', blank=True)
 
     def __str__(self):
         return f'{self.last_name}, {self.fisrt_name}'
